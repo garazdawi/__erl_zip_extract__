@@ -23,11 +23,5 @@ jobs:
         with:
           version-type: strict
           otp-version: '25.0-rc3'
+      - run: systeminfo
       - run: escript test.erl
-        continue-on-error: true
-      - run: |
-          if [[ -f erl_crash.dump ]]; then gzip erl_crash.dump; fi;
-        shell: bash
-      - run: gh release upload --clobber log erl_crash.dump.gz
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
