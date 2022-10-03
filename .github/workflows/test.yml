@@ -13,7 +13,7 @@ jobs:
         with:
           version-type: strict
           otp-version: '25.0-rc3'
-      - run: escript test.erl
+      - run: escript zip_extract_test.erl
   windows:
     runs-on: windows-2022
     steps:
@@ -24,4 +24,4 @@ jobs:
           version-type: strict
           otp-version: '25.1'
       - run: systeminfo
-      - run: escript test.erl
+      - run: escript zip_extract_test.erl
